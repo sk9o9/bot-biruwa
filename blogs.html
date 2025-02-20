@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- defined meta tags  -->
+    <meta name="description" content="The blogs page of bot biruwa" />
+    <meta name="keywords" content="bot, biruwa,blogs" />
+    <meta name="author" content="Aayushree, Rishav" />
+
+    <title>Blogs | Bot Biruwa</title>
+    <!-- linking with the external css file  -->
+    <link rel="stylesheet" href="./index.css">
+
+    <style>
+        /* internal css properties  */
+        .container {
+            background-color: #ffe599;
+        }
+
+        .blogs_side {
+            width: 60%;
+            /*allocating width to the blog side division */
+        }
+
+        .blogs_card {
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 100px;
+            /* adding box shadow property same as used in index.html */
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            background-color: #fff;
+            text-align: justify;
+        }
+
+        .title {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .title p {
+            font-size: 17px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            font-style: italic;
+            color: grey;
+        }
+
+        .container {
+            /* to display horizontally  */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blogs_title {
+            font-size: 24px;
+
+        }
+
+        .blogs_title h5 {
+            font-size: 14px;
+            text-align: left;
+            margin-top: 10px;
+            /* margin-left: 3px; */
+            margin-bottom: 15px;
+            color: #252625;
+        }
+
+        .blogs_desc {
+            margin-top: 10px;
+            font-size: 16px;
+            margin-right: 30px;
+        }
+
+        .blogs_desc ol {
+            margin-left: 20px;
+        }
+
+        .blogs_desc li {
+
+            margin-top: 7PX;
+            margin-bottom: 7PX;
+        }
+
+        .blogs_footer {
+            text-align: right;
+            font-size: 16px;
+            margin-right: 30px;
+            color: #252625;
+            margin-top: 15px;
+
+        }
+
+        .blogs_img img {
+            width: 96%;
+            height: 300px;
+            margin-right: 30px;
+
+        }
+
+        .right_side {
+            width: 400px;
+            margin-top: 12px;
+        }
+
+        .right_box {
+            margin-right: 30px;
+            /* the box shadow X-Y offset, blur, spread ratio  */
+            /* same as index.html  */
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            background-color: #fff;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .box_title {
+            font-size: 20px;
+            text-align: justify;
+            font-weight: 600;
+
+        }
+
+        .box_date,
+        .box_footer {
+            color: #252625;
+            font-size: 15px;
+            text-align: right;
+
+        }
+
+        .box_button {
+            text-align: center;
+        }
+
+        .box_button button {
+            /* button styles  */
+            margin-top: 20px;
+            padding: 10px;
+            width: 130px;
+            margin-bottom: 10px;
+            background-color: black;
+            color: white;
+        }
+
+        .box_button button:hover {
+            /*on hover button styles  */
+            background-color: #20272e;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <header>
+        <nav>
+            <div class="nav_container" id="navbar">
+                <div class="nav_logo">
+                    <!-- this division contains the logo of the website -->
+                    <img src="./assets/img/logo.png" style="max-height: 95px; max-width: 300px;" alt="">
+                </div>
+
+                <div class="search_bar">
+                    <!-- division for search bar -->
+                    <form action="">
+                        <input type="text" placeholder="Search bonsai plants ...">
+                    </form>
+                </div>
+                <div class="nav_bar">
+                    <!-- to contain the links to navigate to other pages -->
+                    <ul class="nav_items">
+                        <li><a href="index.html" class="nav_links ">Home</a></li>
+                        <li><a href="store.html" class="nav_links">Store</a></li>
+                        <li><a href="blogs.html" class="nav_links selected_nav">Blogs</a></li>
+                        <li><a href="research.html" class="nav_links">Research</a></li>
+                        <li><a href="about.html" class="nav_links">About Us</a></li>
+                        <li>
+                            <!-- icon for login  -->
+                            <button style="margin-left: 20px;" onclick="login()">
+                                <img src="./assets/icons/admin.png" width="24px" height="24px" alt="user"
+                                    onclick="loginMenu()">
+                            </button>
+                        </li>
+                        <li>
+                            <!-- cart icon  -->
+                            <button onclick="cartMessage()" style="margin-left: 30px;">
+                                <img src="./assets/icons/cart.png" width="24px" height="24px" alt="cart">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- alert container  -->
+    <div class="alert" id="alert-container">
+        <!-- alert container cgoes here  -->
+        <!-- appears when cart icons is clicked  -->
+        <div class="alert_container">
+            <div class="alert_cancel" id="alert-cancel">
+                <button onclick="closeAlert()">x</button>
+            </div>
+            <div class="alert_content">
+                <p>You do not have any item in your cart !</p>
+                <span>Add products to see them in your cart.</span><br>
+                <a href="store.html#prods">
+                    <button id="alertBtn">
+                        View products
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- alert container  -->
+
+
+    <!-- login and sign up form pop up -->
+
+
+    <div class="login" id="login-container">
+        <div class="login_container">
+            <div class="login_cancel">
+                <!-- close button goes here  -->
+                <button onclick="closeLogin()">
+                    x
+                </button>
+            </div>
+            <form action="">
+                <!-- components inside the container goes here  -->
+                <div class="login_header">
+                    <h1>LOG IN</h1>
+                    <p>Enter your registered email id and password to log in to your account.</p>
+                </div>
+                <div class="login_input">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <p>forgot password? <a href="#">Click here</a>.</p>
+                </div>
+                <div class="login_button">
+                    <!-- button goes hhere  -->
+                    <button>
+                        Log In
+                    </button>
+                </div>
+                <div class="login_option">
+                    or log in with
+                </div>
+                <div class="login_icons">
+                    <!-- icons goes here  -->
+                    <img src="./assets/icons/google.png" width="20" height="20" alt="google"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/facebook-logo-2019.png" width="20" height="20" alt="facebook"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/instagram.png" width="20" height="20" alt="instagram"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/twitter.png" width="20" height="20" alt="">
+                </div>
+                <hr>
+                <div class="login_register">
+                    Do not have an account yet? <a href="#">Register</a>.
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!------xxx------ login and sign up form pop up ends here -----xxx------->
+
+
+    <main>
+        <section style="background-color: #ffe599;">
+            <div class="title">
+                <!-- title  -->
+                <h1>Blogs</h1>
+                <!-- small quote  -->
+                <p>Bonsai is an ancient art form <br> that originate from japan it aims to create the small version of
+                    tree
+                    that
+                    could be
+                    found in nature.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="blogs_side" id="blog1">
+                    <!-- first blog card  -->
+                    <div class="blogs_card">
+                        <!-- blog title goes here  -->
+                        <div class="blogs_title">
+                            <h3>How is technology helping us to extend our flower business?</h3>
+                            <!-- dates goes here  -->
+                            <h5>2023-03-04</h5>
+                        </div>
+                        <div class="blogs_img">
+                            <img src="./assets/img/blogs1.webp" alt="blogs img">
+                        </div>
+                        <div class="blogs_desc">
+                            <!-- blogs description goes here  -->
+                            <p>
+                                <!-- add all the description part -->
+                                Technology has been developing everyday and it has been positively helped flower
+                                business to
+                                become
+                                more and more easy and effective. As we know that farmers and florists are using a
+                                advanced
+                                cultivation technology to increase the harvest and preserve the seeds, the technology
+                                has
+                                come
+                                forward to help them to sell the same product to the markets with minimum spoilage.
+                                Technology
+                                has
+                                also provided florists with a convenient way to showcase their talent,passion, and
+                                artwork
+                                to
+                                the
+                                world. In fact, many platforms have featured different artists and their work online.
+
+                            </p>
+                        </div>
+                        <div class="blogs_footer">
+                            <!-- add your name as footer  -->
+                            <h4>- Aayushree Dahal</h4>
+
+                        </div>
+                    </div>
+
+                    <!-- another blog card  -->
+                    <div class="blogs_card" id="blog2">
+                        <div class="blogs_title">
+                            <!-- blog title goes here  -->
+                            <h3>How to choose a bonsai tree?</h3>
+                            <!-- dates goes here  -->
+                            <h5>2023-03-04</h5>
+                        </div>
+                        <div class="blogs_img">
+                            <img src="./assets/img/blogs2.webp" style="height: 400px;" alt="another blog img">
+                        </div>
+                        <div class="blogs_desc">
+                            <!-- blogs description goes here  -->
+                            <p>
+                                Bonsai Tree is enjoyed by people all over the world. When its come to choosing a perfect
+                                bonsai
+                                tree, there are a few things to keep in mind.
+                            </p>
+                            <ol>
+                                <li>
+                                    <B>Size Matters:</B> When it comes to bonsai tree, size definitely matters, bonsai
+                                    tree
+                                    can come up
+                                    with lots of different sizes. Therefore you need to choose or buy one can come up
+                                    with
+                                    lots
+                                    of
+                                    different sizes. Therefore you need to choose or buy one which is the rigt size for
+                                    the
+                                    space
+                                    you are putting it in.
+                                </li>
+                                <li>
+                                    <b>Consider the Shape:</b> The shape of the Bonsai tree is also important. The plant
+                                    should
+                                    complement
+                                    the shape of the tree. For example, a conical tree would look best in a round pot,
+                                    while
+                                    a
+                                    cascading tree would look best in an oval or rectangular pot.
+                                </li>
+
+                                <li>
+                                    <b>Style Matters:</b> While choosing a Style of bonsai tree is important. There are
+                                    different types
+                                    of
+                                    styles of bonsai plant you can choose. The four main styles of bonsai plants
+                                    are:formal
+                                    upright,
+                                    informal upright,slanting and cascade.Each style has its own unique requirements.
+
+                                </li>
+                                <li>
+                                    <b>Consider the price:</b> The price is also on important factor to consider when
+                                    choosing the
+                                    bonsai
+                                    plant. There are many different types of bonsai plants available on the market and
+                                    they
+                                    can
+                                    vary
+                                    greatly in price. You should choose a tree that is within your budget.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="blogs_footer">
+                            <!-- name as footer  -->
+                            <h4>- Aayushree Dahal</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_side">
+                    <div class="right_box">
+                        <!-- <div class="box_date">
+                            <p>2023-03-04</p>
+                        </div> -->
+                        <div class="box_title">
+                            <p>How is technology helping us to extend our flower business?</p>
+                        </div>
+                        <div class="box_button">
+                            <a href="#blog1">
+                                <button>
+                                    Read now
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right_box">
+                        <!-- <div class="box_date">
+                            <p>2023-03-04</p>
+                        </div> -->
+                        <div class="box_title">
+                            <p>How to choose a bonsai tree?</p>
+                        </div>
+                        <div class="box_button">
+                            <a href="#blog2">
+                                <button>
+                                    Read now
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer section starts here  -->
+    <footer>
+        <div class="footer_container">
+            <div class="footer_main">
+                <div class="footer_links">
+                    <!-- first left box for the footer section containing the quick links -->
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="./about.html#contactus">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_logo">
+                    <!-- center box for logo  -->
+                    <span style="color:rgb(13, 190, 84)">Bot Biruwa</span><br>
+                    <span style="font-size: small;"><i>Since 2011, making world green.</i></span>
+                </div>
+                <div class="footer_contact">
+                    <!-- right box to add the contact area -->
+                    <h2>Contact</h2>
+                    <ul>
+                        <li><img src="./assets/icons/location.png" alt="" style="margin-right: 15px;">Durbar Marg,
+                            Kathmandu</li>
+                        <li style=" cursor: pointer; text-decoration: underline;"><img
+                                src="./assets/icons/telephone.png" alt="Telephone"
+                                style="margin-right: 15px;">01-1010101</li>
+                        <li style=" cursor: pointer; text-decoration: underline;"><img src="./assets/icons/email.png"
+                                alt="Email" style="margin-right: 15px;">support@botbiruwa.com.np</li>
+                    </ul>
+                    <h3>Follow us</h3>
+                    <ul class="footer_icons">
+                        <!-- social media icons for the contact  section -->
+                        <li><img src="./assets/icons/facebook-logo-2019.png" alt="Facebook"></li>
+                        <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                        <li><img src="./assets/icons/twitter.png" alt="Twitter"></li>
+                        <li><img src="./assets/icons/movie.png" alt="YouTube"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <!-- copyright section contans only  one sentence -->
+                <p>
+                    Copyright 2022 &copy;
+                    <span style=" cursor: pointer;"><a style="color:white;" href="index.html">Bot Biruwa</a></span>
+                    <!-- making it a link to  the same page  -->
+                    . All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- linking this webpage with the javascript file  -->
+    <script src="./index.js"></script>
+</body>
+
+</html>

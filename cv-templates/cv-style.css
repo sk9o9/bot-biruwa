@@ -1,0 +1,147 @@
+*{
+    font-family: 'Poppins', sans-serif; /* to change all around the page */
+    margin: 0;
+    padding: 0;
+    /* removes all the pre  allocated margin and padding  */
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+.cv-info{
+    /* to display items vertically  */
+    display: flex;
+    flex-direction: column;
+    /* to move the div towards the end  */
+    justify-content: flex-end;
+    padding: 0 0 0px 45px;
+}
+.info-header{
+    /* changing the text to uppercase  */
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 46px;
+}
+.info-text{
+    /* capitalising the text, adding some font weight and margin at the top  */
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 25px;
+    margin-top: 13px;
+}
+
+.follow h3{ 
+    color: rgb(37, 150, 190);
+}
+.follow-icons{
+    margin-top: 15px;
+}
+.follow-icon{
+    margin-right: 20px;
+}
+.follow-icon:hover{
+    /* cursor point when hovered over  */
+    cursor: pointer;
+}
+.cv-container{
+    /* top right bottom left  */
+    padding: 20px 30px 0 100px;
+}
+.cv-header{
+    /* to show the divs horizontally */
+    display: flex;
+}
+
+.cv-main{
+    /* to show the divs horizontally */
+    display: flex;
+    justify-content: space-between;
+}
+.cv-left{
+    /* allocating width of 30 percent to left side of the cv  */
+    width: 30%;
+}
+.cv-right{
+    /* allocating width  */
+    margin-right: 300px;
+    width: 30%;
+
+}
+.cv-pic img{
+    /* making border round  */
+    border-radius: 50%;
+}
+.section-header{
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    color: rgb(37, 150, 190);
+    letter-spacing: 1px;
+}
+hr{
+    /* stying the horizontal rule  */
+    height: 1px;
+    border: none;
+    background-color: rgb(37, 150, 190);
+    margin-bottom: 15px;
+}
+/* adding margins to the divs  */
+.contact-link{
+    margin: 10px 0 10px 0;
+}
+.contact-icons{
+    margin-right: 10px;
+}
+.edu-detail{
+    margin: 10px 0 10px 0;
+}
+.skills{
+    /* to show horizontally  */
+    display: flex;
+}
+.skills-tag{
+    margin: 15px;
+    font-weight: 600;
+}
+.skills-right{
+    /* alocating width  */
+    width: 280px;
+}
+.skills-bar{
+    background-color: rgb(37, 150, 190);
+    border-radius: 15px;
+    margin: 15px;
+    width: 100%;
+}
+.bar-text{
+    background: transparent;
+    margin-left: 15px;
+}
+.back{
+    /* to show horizontally and push to the end  */
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 50px 0 0 ;
+}
+.back button{
+    /* styling the button  */
+    background-color: #0a0a0a;
+    padding: 10px;
+    width: 150px;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(37, 150, 190);
+    letter-spacing: 2px;
+    border-radius: 20px;
+    outline: 2px solid rgb(37, 150, 190);
+}
+.back button:hover{
+    /* styling hover effects on button  */
+    background-color: rgb(37, 150, 190);
+    color: WHITE;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.back a{
+    /* removing underline from the anchor tag   */
+    text-decoration: none;
+}

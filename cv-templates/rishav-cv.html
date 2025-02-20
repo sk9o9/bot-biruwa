@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- defined meta tags  -->
+    <meta name="description" content="The cv page of members bot biruwa" />
+    <meta name="keywords" content="bot, biruwa,cv" />
+    <meta name="author" content="Rishav" />
+    <title>CV | Bot Biruwa</title>
+    <!-- link to external style sheet -->
+    <link rel="stylesheet" href="./cv-style.css">
+    <style>
+        .cv-pic img {
+            object-fit: cover;
+            /* to manage the size of the image  */
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <!-- nested div will be used 
+    throughout the section -->
+        <div class="cv-container">
+            <div class="cv-header">
+                <div class="cv-pic">
+                    <img src="../assets/portfolio pics/rishav.png" height="200px" width="200px" alt="profile picture">
+                </div>
+                <div class="cv-info">
+                    <!-- div containing name, occupation and follow links -->
+                    <h1 class="info-header">Rishav Karna</h1>
+                    <h3 class="info-text">Web Developer | Student</h3>
+                    <div class="follow">
+                        <h3 class="info-text">Follow Me</h3>
+                        <div class="follow-icons">
+                            <!-- images that links to pages  -->
+                            <a href="https://www.facebook.com/rrieshavv?mibextid=ZbWKwL"><img class="follow-icon"
+                                    src="../assets/icons/facebook-logo-2019.png" alt="Facebook"></a>
+                            <a href="https://www.instagram.com/rrieshavv"><img class="follow-icon"
+                                    src="../assets/icons/instagram.png" alt="Instagram"></a>
+                            <a href=""><img class="follow-icon" src="../assets/icons/twitter.png" alt="Twitter"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cv-main">
+                <div class="cv-left">
+                    <!-- left side of the page  -->
+                    <!-- maintained by display flex property  -->
+                    <div class="cv-profile">
+                        <h2 class="section-header">Profile</h2>
+                        <hr><!-- profile text  -->
+                        <p style="text-align: justify;">
+                            First year student pursuing an IT degree @ Islington College Kathmandu. Joined Islington for
+                            the exposure and experience with a fine curiosity to know the industry and build the spirit
+                            of learning. Primarily focused on web developing and designing.
+                        </p>
+                    </div>
+                    <div class="cv-contact" style="margin-top: 80px;">
+                        <h2 class="section-header">Contact</h2>
+                        <hr>
+                        <div class="contact-link">
+                            <!-- contact linnks with icons  -->
+                            <img class="contact-icons" src="../assets/icons/email.png" alt="email">
+                            <a href="mailto:asrishavaf@gmail.com">asrishavaf@gmail.com</a>
+                        </div>
+                        <div class="contact-link">
+                            <!-- contact linnks with icons  -->
+                            <img class="contact-icons" src="../assets/icons/telephone.png" alt="phone">
+                            +977 9803633427
+                        </div>
+                        <div class="contact-link">
+                            <!-- contact linnks with icons  -->
+                            <img class="contact-icons" src="../assets/icons/location.png" alt="location">
+                            Hattiban, Lalitpur, Nepal
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-right">
+                    <!-- right side of the page  -->
+                    <!-- maintained by display flex css porperty  -->
+                    <div class="cv-edu">
+                        <h2 class="section-header">Education</h2>
+                        <hr>
+                        <div class="edu-detail">
+                            <!-- education text container  -->
+                            <!-- same div can be repeated to implement same properties -->
+                            <p style="font-size: 18px;"><b>BSc. (Hons) Computing</b></p>
+                            <p>Islington College, Kamalpokhari</p>
+                            <p>September 2022 - Present</p>
+                        </div>
+                        <div class="edu-detail">
+                            <!-- education text container  -->
+                            <!-- same div can be repeated to implement same properties -->
+                            <p style="font-size: 18px;"><b>Higher Secondary Education</b></p>
+                            <p>St. Xavier's School, Jawalakhel</p>
+                            <p>2020-2022</p>
+                        </div>
+                        <div class="edu-detail">
+                            <!-- education text container  -->
+                            <!-- same div can be repeated to implement same properties -->
+                            <p style="font-size: 18px;"><b>Secondary Education</b></p>
+                            <p>Aster Academy, Imadol</p>
+                            <p>2010-2020</p>
+                        </div>
+                    </div>
+                    <div class="cv-skills">
+                        <h2 class="section-header">Skills</h2>
+                        <hr>
+                        <!-- skills contains skills name and progress bar  -->
+                        <div class="skills">
+                            <div class="skill-title">
+                                <div class="skills-tag">
+                                    <!-- skills name  -->
+                                    HTML
+                                </div>
+                                <div class="skills-tag">
+                                    <!-- skills name  -->
+                                    CSS
+                                </div>
+                                <div class="skills-tag">
+                                    <!-- skills name  -->
+                                    JavaScript
+                                </div>
+                                <div class="skills-tag">
+                                    <!-- skills name  -->
+                                    Java
+                                </div>
+                            </div>
+                            <!-- code for skills bar -->
+                            <!-- the width of the bar has been 
+                            set according to the percentage for expertise -->
+                            <div class="skills-right">
+                                <div class="skills-bar" style="width: 90%;">
+                                    <!-- skills progress bars  -->
+                                    <span class="bar-text">90%</span>
+                                </div>
+                                <div class="skills-bar" style="width: 80%;">
+                                    <!-- skills progress bars  -->
+                                    <span class="bar-text">80%</span>
+                                </div>
+                                <div class="skills-bar" style="width: 59%;">
+                                    <!-- skills progress bars  -->
+                                    <span class="bar-text">59%</span>
+                                </div>
+                                <div class="skills-bar" style="width: 74%;">
+                                    <!-- skills progress bars  -->
+                                    <span class="bar-text">74%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <nav>
+        <!-- a button containing link 
+        to navigate back to 
+        about us page -->
+        <div class="back">
+            <a href="../about.html"><button>Go Back</button></a>
+        </div>
+        <!-- skills progress bars  -->
+        </div>
+</body>
+
+</html>

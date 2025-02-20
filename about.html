@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- defined meta tags  -->
+    <meta name="description" content="The about page of bot biruwa" />
+    <meta name="keywords" content="bot, biruwa, about, contact, " />
+    <meta name="author" content="Rijan, Rishav" />
+
+    <title>About us | Bot Biruwa</title>
+
+    <!-- link to external css stylesheet -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+<style>
+    .main {
+        /* the flex property will shows div in a line */
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .main2 {
+        /* display flex property to show divs in a line  */
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .head {
+        text-align: center;
+    }
+
+    .box {
+        height: 500px;
+        padding: 10px;
+        width: 400px;
+        margin: 20px 0px;
+        border: 1px solid;
+        text-align: center;
+        border-radius: 20px;
+        /* box shadow:  X and Y offsets , blur and spread radius, and color.  */
+        box-shadow: 5px 5px 7px black;
+        background-color: white;
+    }
+
+    .box:hover {
+        /* increasing size on hover  */
+        transform: scale(1.1);
+        /* time taken by the transform property  */
+        transition: .3s ease;
+        background-color: #ececec;
+    }
+
+    .box2 img {
+        margin-top: 40px;
+        height: 150px;
+        width: 180px;
+        border-radius: 50%;
+
+    }
+
+    .about {
+        /* background image and its properties to place it well  */
+        background-image: url(./assets/about/sec.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 740px;
+    }
+
+    .blog-btn {
+        background-color: black;
+        color: aliceblue;
+        /* adding width to increase the size of the button */
+        width: 150px;
+        font-size: 20px;
+        padding: 10px;
+
+    }
+
+    .blog-btn:hover {
+        /* button hover effects  */
+        color: white;
+        background-color: #20272e;
+        cursor: pointer;
+    }
+
+    .back {
+        background-color: #dfdcd4;
+    }
+
+    .back h1 {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .back p {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .textbox {
+        color: black;
+    }
+
+    .contact {
+        /* background image and adding properties to it  */
+        background-image: url(./assets/about/contact-us-phone.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .contact p {
+        margin-bottom: 60px;
+        font-size: 20px;
+        text-align: center;
+
+    }
+
+    .contact h1 {
+        font-size: 55px;
+        margin-bottom: 10px;
+
+    }
+
+    .contact_from {
+        width: 500px;
+    }
+
+    .contact_from input,
+    .contact_from textarea {
+
+        /* styles to the form input and text area  */
+        width: 100%;
+        padding: 17px;
+        border: 1px solid;
+        box-shadow: 3px 3px 3px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .contact form .button {
+        /* to display the items horizontally   */
+        display: inline-block;
+        background: black;
+        text-transform: uppercase;
+        /* adding border but making it transparent */
+        border: 1px solid transparent;
+        width: 200px;
+        height: 50px;
+        /* transition time of 0.2 seconds  */
+        transition: ease .20s;
+        cursor: pointer;
+        font-size: 20px;
+        outline: none;
+        color: white;
+
+    }
+
+    .contact form .button:hover {
+        background-color: white;
+        /* on hover effects on the button of form  */
+        transform: scale(1.1);
+        color: black;
+
+    }
+
+    .abouttext {
+        height: inherit;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-left: 20px;
+        width: 40%;
+        color: black;
+    }
+
+    .abouttext h1 {
+        font-size: 80px;
+    }
+
+    .abouttext p {
+        font-size: 40px;
+        text-align: justify;
+    }
+
+    .abouttext button {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    .container-about {
+        /* vertical container  */
+        margin-top: 29px;
+        display: flex;
+        width: 100%;
+        height: 400px;
+    }
+
+    .childbox {
+        margin-top: 0px;
+        height: 380px;
+        width: 49%;
+        box-shadow: 3px 3px 3px;
+
+    }
+
+    .childbox img {
+        height: 380px;
+    }
+
+    .childbox2 {
+        margin-top: 0px;
+        margin-left: 20px;
+        background-color: #dfdcd4;
+        height: 380px;
+        padding: 15px;
+    }
+
+    .childbox2 h2 {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .childbox2 p {
+        /* font properties to the paragraph  */
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .childbox_p {
+        width: 70%;
+        background-color: #dfdcd4;
+        margin-right: 20px;
+        padding: 15px;
+    }
+
+    .childbox_p h2 {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .childbox_p p {
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .childbox_p2 {
+        box-shadow: 3px 3px 3px;
+        width: 40%;
+        padding: 15px;
+    }
+
+    .childbox_p2 img {
+        width: 100%;
+        height: 380px;
+    }
+
+    .contact {
+        /* showing the list vertically  */
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cv-img {
+        /* box shadow property  */
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        /* box shadow:  X and Y offsets , blur and spread radius, and color.  */
+        object-fit: cover;
+        /* image positioning*/
+    }
+
+    input:focus {
+        outline: none;
+        /* removes outline when the input field is selected  */
+    }
+
+    .submit-btn {
+        margin-left: 150px;
+    }
+</style>
+
+
+<body>
+    <!-- nav bar -->
+    <header>
+        <nav>
+            <div class="nav_container" id="navbar">
+                <div class="nav_logo">
+                    <!-- this division contains the logo of the website -->
+                    <img src="./assets/img/logo.png" style="max-height: 95px; max-width: 300px;" alt="">
+                </div>
+
+                <div class="search_bar">
+                    <!-- division for search bar -->
+                    <form action="">
+                        <input type="text" placeholder="Search bonsai plants ...">
+                    </form>
+                </div>
+                <div class="nav_bar">
+                    <!-- to contain the links to navigate to other pages -->
+                    <ul class="nav_items">
+                        <li><a href="index.html" class="nav_links ">Home</a></li>
+                        <li><a href="store.html" class="nav_links">Store</a></li>
+                        <li><a href="blogs.html" class="nav_links ">Blogs</a></li>
+                        <li><a href="research.html" class="nav_links">Research</a></li>
+                        <li><a href="about.html" class="nav_links selected_nav">About Us</a></li>
+                        <li>
+                            <!-- icon for login  -->
+                            <button style="margin-left: 20px;" onclick="login()">
+                                <img src="./assets/icons/admin.png" width="24px" height="24px" alt="user"
+                                    onclick="loginMenu()">
+                            </button>
+                        </li>
+                        <li>
+                            <!-- cart icon  -->
+                            <button onclick="cartMessage()" style="margin-left: 30px;">
+                                <img src="./assets/icons/cart.png" width="24px" height="24px" alt="cart">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- alert container  -->
+    <div class="alert" id="alert-container">
+        <div class="alert_container">
+            <div class="alert_cancel" id="alert-cancel">
+                <button onclick="closeAlert()">x</button>
+            </div>
+            <div class="alert_content">
+                <p>You do not have any item in your cart !</p>
+                <span>Add products to see them in your cart.</span><br>
+                <a href="store.html">
+                    <button id="alertBtn">
+                        Visit Store
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- alert container  -->
+
+
+    <!-- login and sign up form pop up -->
+
+
+    <div class="login" id="login-container">
+        <div class="login_container">
+            <!-- displaying modal when function is trigerred  -->
+            <div class="login_cancel">
+                <button onclick="closeLogin()">
+                    x
+                </button>
+            </div>
+            <form action="">
+                <!-- contains the elements inside the modal  -->
+                <div class="login_header">
+                    <h1>LOG IN</h1>
+                    <p>Enter your registered email id and password to log in to your account.</p>
+                </div>
+                <div class="login_input">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <p>forgot password? <a href="#">Click here</a>.</p>
+                </div>
+                <div class="login_button">
+                    <button>
+                        Log In
+                    </button>
+                </div>
+                <div class="login_option">
+                    or log in with
+                </div>
+                <div class="login_icons">
+                    <!-- icons -->
+                    <img src="./assets/icons/google.png" width="20" height="20" alt="google"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/facebook-logo-2019.png" width="20" height="20" alt="facebook"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/instagram.png" width="20" height="20" alt="instagram"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/twitter.png" width="20" height="20" alt="">
+                </div>
+                <hr>
+                <div class="login_register">
+                    Do not have an account yet? <a href="#">Register</a>.
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!------xxx------ login and sign up form pop up -----xxx------->
+
+    <main>
+        <section>
+            <div class="about">
+                <div class="abouttext">
+                    <!-- title  -->
+                    <h1 style="padding-top: 30px;">About <br> Bot Biruwa</h1>
+                    <p style="margin-top: 120px; text-align: left;">
+                        <!-- paragraph fpr the this section under the title  -->
+                        Nepal's fastest growing company which brings greenery around your surroundings and in your home
+                        which supports sustainable development.
+                    </p>
+                    <a href="#story">
+                        <!-- it navigates to our story  -->
+                        <button class="blog-btn" style="margin-top: 60px;">Learn More</button>
+                    </a>
+                </div>
+
+
+                <div class="container-about" id="story">
+                    <!-- a container that contains our story and an iamge -->
+                    <div class="childbox">
+                        <!-- the image  -->
+                        <img src="./assets/about/our story.jpg" alt="img">
+                    </div>
+                    <div class="childbox2">
+                        <h2> OUR STORY</h2>
+                        <p>
+                            <!-- the paragraph  -->
+                            Our company was started from a small business which only sold a small amount of product. We
+                            started the company with the sole purpose of making your home environment green and fresh.
+                            And now we are selling online for the sole purpose of customer easement and providing the
+                            best offer. Our company is made up of the best employee and management team. Our story of
+                            growth and betterment has been increasing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container-about">
+                    <!-- a container that contains our story and an iamge -->
+                    <div class="childbox_p">
+                        <h2>OUR PRODUCT</h2>
+                        <p>
+                            <!-- the paragraph  -->
+                            Bot Birwa is the best ecommerce company which has been satisfying customers ever since. Our
+                            product is the best quality product in the market. We only sell the product after confirming
+                            the best quality by a professional team. We import and export bonsai plants all over the
+                            world. We have always received good reviews from our customers.
+                        </p>
+                    </div>
+                    <div class="childbox_p2">
+                        <!-- the image  -->
+                        <img src="./assets/about/msi.webp" alt="img">
+                    </div>
+                </div>
+
+                <div class="container-about">
+                    <!-- a container that contains our story and an iamge -->
+                    <div class="childbox">
+                        <!-- the image  -->
+                        <img src="./assets/about/goals.jpg" alt="img">
+                    </div>
+                    <div class="childbox2">
+                        <h2 style="margin-top: 70px;">OUR GOALS</h2>
+                        <p>
+                            <!-- the paragraph  -->
+                            Our main goal is customer satisfaction through our product with their shopping experiences.
+                            We provide people to maintain their own garden which makes them active. We are trying to
+                            expand our business as large as possible. We always approach environment friendly practices
+                            and provide contribution to the green environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <!-- our teams section that will contain member  cards  -->
+                    <h1 style="padding-top:20px;">Meet Our Team</h1>
+                    <p>
+                        Our company team are those who are actively working and creating to be the best. Our employee
+                        are bold, <br>
+                        Curious and creative.
+                    </p>
+                    <div class="main">
+                        <div class="box">
+                            <div class="box2">
+                                <img class="cv-img" src="./assets/portfolio pics/rijan.jpg" alt="cv img ">
+                            </div>
+
+                            <div class="textbox">
+                                <!-- detail of team member and their portfolion photos goes here  -->
+                                <hr style="color: black;">
+                                <p style="margin-top: 15px; font-weight: bold;">Rijan Budhathoki</p>
+                                <p>Sales manager | Student</p>
+                                <p style="color: #3d3d3d; font-size: 15px;">
+                                    I am a highly motivated individual who is driven to thrive in the field of computer
+                                    science as a student of computing with a strong enthusiasm for technology. I have a
+                                    strong background in programming languages like Java,html,CSS and Javascript.
+                                </p>
+                                <!-- a link to navigate to their cv goes here  -->
+                                <a href="./cv-templates/rijan-cv.html"><button class="blog-btn">View CV</button></a>
+                            </div>
+                        </div>
+
+
+                        <div class="box">
+                            <div class="box2">
+                                <img class="cv-img" src="./assets/portfolio pics/rishav.png" style="object-fit:fill;"
+                                    alt="cv img ">
+                            </div>
+
+                            <div class="textbox">
+                                <!-- detail of team member and their portfolion photos goes here  -->
+                                <hr style="color: black;">
+                                <p style="margin-top: 15px; font-weight: bold;">Rishav Karna</p>
+                                <p>Web Developer | Student</p>
+                                <p style="color: #3d3d3d; font-size: 15px;">
+                                    First year student pursuing an IT degree @ Islington College Kathmandu. Joined
+                                    Islington for
+                                    the exposure and experience with a fine curiosity to know the industry and build the
+                                    spirit
+                                    of learning. Primarily focused on web developing and designing.
+                                </p>
+                                <!-- a link to navigate to their cv goes here  -->
+                                <a href="./cv-templates/rishav-cv.html"><button class="blog-btn">View CV</button></a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="box2">
+                                <img class="cv-img" src="./assets/portfolio pics/Screenshot 2023-01-30 121022.png"
+                                    style="object-fit: fill;" alt="cv img ">
+                            </div>
+
+                            <div class="textbox">
+                                <!-- detail of team member and their portfolion photos goes here  -->
+                                <hr style="color: black;">
+                                <p style="margin-top: 15px; font-weight: bold;">Manoj Gautam</p>
+                                <p>Student</p>
+                                <p style="color: #3d3d3d; font-size: 15px;">
+                                    Student of computing. Interested in software development and have skills regarding
+                                    html,
+                                    css,
+                                    javascript and java programming language with being familiar to ms- word,
+                                    powerpoint.
+                                    Watching movies and visiting new places are other hobbies.
+                                </p>
+                                <!-- a link to navigate to their cv goes here  -->
+                                <a href="./cv-templates/manoj-cv.html"><button class="blog-btn">View CV</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="main2">
+                        <div class="box">
+                            <div class="box2">
+                                <img class="cv-img" src="./assets/about/loading.jpg" alt="cv img ">
+                            </div>
+
+                            <div class="textbox">
+                                <!-- detail of team member and their portfolion photos goes here  -->
+                                <hr style="color: black;">
+                                <p style="margin-top: 15px; font-weight: bold;">Sumit Khadka</p>
+                                <p>Student</p>
+                                <p style="color: #3d3d3d; font-size: 15px;">
+                                    I am an IT student, currently studying computing. My interests include programming,
+                                    Html,
+                                    Css
+                                    and Javascript. I am always looking to expand my knowledge and skills in these
+                                    areas, and I
+                                    am
+                                    eager to put my learning into practice. I am determined to make a positive impact in
+                                    the
+                                    field
+                                    of technology.
+                                </p>
+                                <!-- a link to navigate to their cv goes here  -->
+                                <a href="./cv-templates/sumit-cv.html"><button class="blog-btn">View CV</button></a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="box2">
+                                <img class="cv-img" src="./assets/portfolio pics/aayushree.jpg" alt="cv img ">
+                            </div>
+
+                            <div class="textbox">
+                                <!-- detail of team member and their portfolion photos goes here  -->
+                                <hr style="color: black;">
+                                <p style="margin-top: 15px; font-weight: bold;">Aayushree Dahal</p>
+                                <p>Student</p>
+                                <p style="color: #3d3d3d; font-size: 15px;">
+                                    My name is Aayushree Dahal. I am a university student. I study computing at
+                                    islington
+                                    college. I am an enthusiastic and a person full of curiosity. I am a thinker because
+                                    I
+                                    prefer to make decision based on logic and reasons and I give importance to honesty
+                                    and
+                                    consistency.
+                                </p>
+                                <!-- a link to navigate to their cv goes here  -->
+                                <a href="./cv-templates/aayushree-cv.html"><button class="blog-btn"
+                                        style="margin-top: 17px;">View CV</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="contact" id="contactus">
+                    <!-- a functional contact form  -->
+                    <h1 style="margin-top: 10px;">Contact US</h1>
+                    <p style="padding-top: 15px; font-size: 21px;">
+                        Send us your feedback! We will reach you back as soon as possible.
+                    </p>
+                    <div class="contact_from">
+                        <form onsubmit="checkForm()" name="contactForm">
+                            <!-- all the input fields goes here  -->
+                            <input type="text" name="username" placeholder="Your name">
+                            <input type="number" name="phone" placeholder="Phone number">
+                            <input type="email" name="email" placeholder="E-mail address">
+                            <textarea cols="30" rows="10" name="message" placeholder="Your message"></textarea>
+                            <input type="submit" value="submit" class="submit-btn button">
+                        </form>
+                    </div>
+                </div>
+                <footer>
+                    <!-- the footer goes here  -->
+                    <div class="footer_container">
+                        <div class="footer_main">
+                            <div class="footer_links">
+                                <!-- first left box for the footer section containing the quick links -->
+                                <h2>Quick Links</h2>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="store.html">Store</a></li>
+                                    <li><a href="blogs.html">Blogs</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="research.html">Research</a></li>
+                                    <li><a href="./about.html#contactus">Contact us</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer_logo">
+                                <!-- center box for logo  -->
+                                <span style="color:rgb(13, 190, 84)">Bot Biruwa</span><br>
+                                <span style="font-size: small;"><i>Since 2011, making world green.</i></span>
+                            </div>
+                            <div class="footer_contact">
+                                <!-- right box to add the contact area -->
+                                <h2>Contact</h2>
+                                <ul>
+                                    <li><img src="./assets/icons/location.png" alt="" style="margin-right: 15px;">Durbar
+                                        Marg,
+                                        Kathmandu</li>
+                                    <li style=" cursor: pointer; text-decoration: underline;"><img
+                                            src="./assets/icons/telephone.png" alt="Telephone"
+                                            style="margin-right: 15px;">01-1010101</li>
+                                    <li style=" cursor: pointer; text-decoration: underline;"><img
+                                            src="./assets/icons/email.png" alt="Email"
+                                            style="margin-right: 15px;">support@botbiruwa.com.np</li>
+                                </ul>
+                                <h3>Follow us</h3>
+                                <ul class="footer_icons">
+                                    <!-- social media icons for the contact  section -->
+                                    <li><img src="./assets/icons/facebook-logo-2019.png" alt="Facebook"></li>
+                                    <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                                    <li><img src="./assets/icons/twitter.png" alt="Twitter"></li>
+                                    <li><img src="./assets/icons/movie.png" alt="YouTube"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer_copyright">
+                            <!-- copyright section contans only  one sentence -->
+                            <p>
+                                Copyright 2022 &copy;
+                                <span style=" cursor: pointer;"><a style="color:white;" href="index.html">Bot
+                                        Biruwa</a></span>
+                                <!-- making it a link to  the same page  -->
+                                . All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+        </section>
+    </main>
+
+
+    <!-- linking to the javascript file  -->
+    <script src="./index.js"></script>
+
+
+</body>
+
+</html>

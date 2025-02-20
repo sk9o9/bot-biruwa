@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- defined meta tags  -->
+    <meta name="description" content="The research page of bot biruwa" />
+    <meta name="keywords" content="bot, biruwa,researcg, references" />
+    <meta name="author" content="Manoj, Rishav" />
+
+    <title>Research | Bot Biruwa</title>
+
+    <!-- link to external css stylesheet -->
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        body {
+            /* setting the overflow to hidden to jutice transform effects  */
+            overflow-x: hidden;
+        }
+
+        .first {
+            background-color: #f0f7f6;
+            padding: 20px;
+        }
+
+        .refhome {
+            padding-top: 20px;
+
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        .big-img:hover {
+            /* transform on hover  */
+            transform: scale(1.1);
+            transition: 0.5s ease;
+        }
+
+        .small-img:hover {
+            /* transform on hover  */
+            transform: scale(1.8);
+            transition: 0.5s ease;
+        }
+
+        .home-table {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .table-smalls {
+            padding-left: 5px;
+        }
+
+        .research-para {
+            /* font-family: arial; */
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .daraz {
+            /* to display horizontally  */
+            display: flex;
+        }
+
+        .line {
+            border-top: 1.5px solid black;
+        }
+
+        .blogs {
+            border-right: 1.5px solid black;
+            padding-left: 50px;
+            flex: 50%;
+        }
+
+        .products {
+            flex: 50%;
+            padding-left: 50px;
+        }
+
+        .second {
+            background-color: ghostwhite;
+        }
+
+        .main-container {
+            padding-top: 30px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 38px;
+            padding-bottom: 30px;
+        }
+
+        .logo {
+            /* to display horizontally  */
+            padding: 10px 100px 10px 100px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .logo img {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- nav bar -->
+        <header>
+            <nav>
+                <div class="nav_container" id="navbar">
+                    <div class="nav_logo">
+                        <!-- this division contains the logo of the website -->
+                        <img src="./assets/img/logo.png" style="max-height: 95px; max-width: 300px;" alt="">
+                    </div>
+
+                    <div class="search_bar">
+                        <!-- division for search bar -->
+                        <form action="">
+                            <input type="text" placeholder="Search bonsai plants ...">
+                        </form>
+                    </div>
+                    <div class="nav_bar">
+                        <!-- to contain the links to navigate to other pages -->
+                        <ul class="nav_items">
+                            <li><a href="index.html" class="nav_links ">Home</a></li>
+                            <li><a href="store.html" class="nav_links">Store</a></li>
+                            <li><a href="blogs.html" class="nav_links">Blogs</a></li>
+                            <li><a href="research.html" class="nav_links selected_nav">Research</a></li>
+                            <li><a href="about.html" class="nav_links">About Us</a></li>
+                            <li>
+                                <!-- icon for login  -->
+                                <button style="margin-left: 20px;" onclick="login()">
+                                    <img src="./assets/icons/admin.png" width="24px" height="24px" alt="user"
+                                        onclick="loginMenu()">
+                                </button>
+                            </li>
+                            <li>
+                                <!-- cart icon  -->
+                                <button onclick="cartMessage()" style="margin-left: 30px;">
+                                    <img src="./assets/icons/cart.png" width="24px" height="24px" alt="cart">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- alert container  -->
+        <div class="alert" id="alert-container">
+            <!-- should show up when the cart icon is clicked  -->
+            <div class="alert_container">
+                <div class="alert_cancel" id="alert-cancel">
+                    <button onclick="closeAlert()">x</button>
+                </div>
+                <div class="alert_content">
+                    <p>You do not have any item in your cart !</p>
+                    <span>Add products to see them in your cart.</span><br>
+                    <!-- link to store.html file  -->
+                    <a href="store.html">
+                        <button id="alertBtn">
+                            Visit Store
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- alert container  -->
+
+
+        <!-- login and sign up form pop up -->
+
+
+        <div class="login" id="login-container">
+            <!-- should show up when admin icon is clicked   -->
+            <div class="login_container">
+                <div class="login_cancel">
+                    <button onclick="closeLogin()">
+                        x
+                    </button>
+                </div>
+                <form action="">
+                    <div class="login_header">
+                        <!-- componenets inside the login modal  -->
+                        <h1>LOG IN</h1>
+                        <p>Enter your registered email id and password to log in to your account.</p>
+                    </div>
+                    <div class="login_input">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <p>forgot password? <a href="#">Click here</a>.</p>
+                    </div>
+                    <div class="login_button">
+                        <button>
+                            Log In
+                        </button>
+                    </div>
+                    <div class="login_option">
+                        or log in with
+                    </div>
+                    <div class="login_icons">
+                        <!-- icons  -->
+                        <img src="./assets/icons/google.png" width="20" height="20" alt="google"
+                            style="margin-right: 10px;">
+                        <img src="./assets/icons/facebook-logo-2019.png" width="20" height="20" alt="facebook"
+                            style="margin-right: 10px;">
+                        <img src="./assets/icons/instagram.png" width="20" height="20" alt="instagram"
+                            style="margin-right: 10px;">
+                        <img src="./assets/icons/twitter.png" width="20" height="20" alt="">
+                    </div>
+                    <hr>
+                    <div class="login_register">
+                        Do not have an account yet? <a href="#">Register</a>.
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!------xxx------ login and sign up form modal end here -----xxx------->
+
+
+
+        <main>
+            <section class="first">
+                <h1 style="font-size: 30px; text-align: center;">
+                    <!-- title goes here  -->
+                    References were taken from the following<br>
+                    websites for our course work
+                </h1>
+                <h2 style="text-align: center;">Home Page Inspiration</h2>
+                <div class="refhome" style="text-align: center;">
+                    <img class="big-img" src="./assets/research/homeref.png"
+                        style="max-width: 1000px; max-height: 900px;">
+
+                    <div>
+                        <!-- formatting using table  -->
+                        <table style="padding-left:220px;">
+                            <tr>
+                                <td class="home-table">
+                                    <!-- image goes here  -->
+                                    <img class="small-img" src="./assets/research/homeref3.png"
+                                        style="max-width: 400px; max-height: 150px;">
+                                </td>
+
+                                <td class="home-table">
+                                    <!-- image goes here  -->
+                                    <img class="small-img" src="./assets/research/homeref1.png"
+                                        style="max-height: 150px; max-width: 400px;">
+                                </td>
+
+                                <td class="home-table">
+                                    <!-- image goes here  -->
+                                    <img class="small-img" src="./assets/research/homeref2.png"
+                                        style="max-height: 150px; max-width: 400px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- the description goes here  -->
+                    <p class="research-para"> The home page was design in reference to the home page of nurserylive as
+                        seen
+                        in the above screenshots.
+                    </p>
+                </div>
+                <br>
+                <div class="daraz">
+                    <div class="blogs" style="background-color: #f5f2f9;">
+                        <h2 style="text-align: center;">Blog Page Inspiration</h2>
+
+                        <!-- image goes here  -->
+                        <img class="big-img" src="./assets/research/wordpressref.png"
+                            style="max-width: 600px; max-height: 400px;">
+
+                        <div>
+                            <table class="table-smalls">
+                                <tr>
+                                    <td style="padding-right: 10px;">
+                                        <!-- image goes here  -->
+                                        <img class="small-img" src="./assets/research/wordpressref1.png"
+                                            style="max-width: 300px; max-height: 150px;">
+                                    </td>
+
+                                    <td>
+                                        <!-- image goes here  -->
+                                        <img class="small-img" src="./assets/research/wordpressref2.png"
+                                            style="max-height: 150px; max-width: 300px;">
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- the description goes here  -->
+                        <p class="research-para" style="text-align: center;"> The blog page was design in reference to
+                            the
+                            home page of wordpress as
+                            seen in the above
+                            screenshots.</p>
+
+                    </div>
+
+                    <div class="products" style="background-color: #f9f4f2;">
+                        <h2 style="text-align: center;">Store Page Inspiration</h2>
+                        <img class="big-img" src="./assets/research/firbit1.png"
+                            style="max-width: 600px; max-height: 400px;">
+
+                        <div>
+                            <table class="table-smalls">
+                                <tr>
+                                    <td style="padding-right: 10px;">
+                                        <!-- image goes here  -->
+                                        <img class="small-img" src="./assets/research/firbit2.png"
+                                            style="max-width: 300px; max-height: 150px;">
+                                    </td>
+
+                                    <td>
+                                        <!-- image goes here  -->
+                                        <img class="small-img" src="./assets/research/firbit3.png"
+                                            style="max-height: 150px; max-width: 300px;">
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- the description goes here  -->
+                        <p class="research-para" style="text-align: center;"> The store page was design in reference to
+                            the
+                            product page of
+                            firbit(no. of products in a row is
+                            kept similar) as seen in the above screenshots.</p>
+
+                    </div>
+
+                </div>
+                <div class="line">
+                    <div class="daraz">
+                        <div class="blogs" style="background-color: #fff4ec;">
+                            <h2 style="text-align: center;">Hover effects and Button Inspiration
+                                With<br> Countdown
+                            </h2>
+
+                            <img class="big-img" src="./assets/research/darazref.png"
+                                style="max-width: 600px; max-height: 400px;">
+
+                            <div>
+                                <table class="table-smalls">
+                                    <tr>
+                                        <td style="padding-right: 10px;">
+                                            <!-- image goes here  -->
+                                            <img class="small-img" src="./assets/research/darazref1.png"
+                                                style="max-width: 300px; max-height: 150px;">
+                                        </td>
+
+                                        <td>
+                                            <!-- image goes here  -->
+                                            <img class="small-img" src="./assets/research/darazref2.png"
+                                                style="max-height: 150px; max-width: 300px;">
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- the description goes here  -->
+                            <p class="research-para" style="text-align: center;"> The different effects, countdown and
+                                service provided to different
+                                number of customer were
+                                reference taken from the daraz website as seen in the above screenshots.</p>
+
+                        </div>
+
+                        <div class="products" style="background-color: #f0f4fa;">
+                            <h2 style="text-align: center;"> Footer Inspiration</h2>
+                            <img class="big-img" src="./assets/research/footer1.png"
+                                style="max-width: 600px; max-height: 400px;">
+
+                            <div>
+                                <table class="table-smalls">
+                                    <tr>
+                                        <td style="padding-right: 10px;">
+                                            <!-- image goes here  -->
+                                            <img class="small-img" src="./assets/research/footer2.png"
+                                                style="max-width: 300px; max-height: 150px;">
+                                        </td>
+
+                                        <td>
+                                            <!-- image goes here  -->
+                                            <img class="small-img" src="./assets/research/footer3.png"
+                                                style="max-height: 150px; max-width: 300px;">
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- the description goes here  -->
+                            <p class="research-para" style="text-align: center;"> The footer was design in reference to
+                                the
+                                footer of Greenpop as seen in
+                                the above screenshots.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="second" style="background-color: white;">
+                <div class="main-container">
+                    <div class="main-title">
+                        <!-- title goes here  -->
+                        <h1>Pictures & Icons from</h1>
+                    </div>
+                    <div class="logo">
+                        <!-- logo images goes here s -->
+                        <img src="./assets/img/unsplash.png" alt="unsplash" height="100" width="200">
+                        <img src="./assets/img/flaticon.png" alt="flaticon" height="35" width="200">
+                        <img src="./assets/img/iconscout-from-lottiefiles.png" alt="iconscout">
+                        <img src="./assets/img/freepik.png" style="margin-top:20px;" alt="freepik" height="100"
+                            width="200">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer_container">
+                <div class="footer_main">
+                    <div class="footer_links">
+                        <!-- first left box for the footer section containing the quick links -->
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="research.html">Research</a></li>
+                            <li><a href="./about.html#contactus">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_logo">
+                        <!-- center box for logo  -->
+                        <span style="color:rgb(13, 190, 84)">Bot Biruwa</span><br>
+                        <span style="font-size: small;"><i>Since 2011, making world green.</i></span>
+                    </div>
+                    <div class="footer_contact">
+                        <!-- right box to add the contact area -->
+                        <h2>Contact</h2>
+                        <ul>
+                            <li><img src="./assets/icons/location.png" alt="" style="margin-right: 15px;">Durbar Marg,
+                                Kathmandu</li>
+                            <li style=" cursor: pointer; text-decoration: underline;"><img
+                                    src="./assets/icons/telephone.png" alt="Telephone"
+                                    style="margin-right: 15px;">01-1010101</li>
+                            <li style=" cursor: pointer; text-decoration: underline;"><img
+                                    src="./assets/icons/email.png" alt="Email"
+                                    style="margin-right: 15px;">support@botbiruwa.com.np</li>
+                        </ul>
+                        <h3>Follow us</h3>
+                        <ul class="footer_icons">
+                            <!-- social media icons for the contact  section -->
+                            <li><img src="./assets/icons/facebook-logo-2019.png" alt="Facebook"></li>
+                            <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                            <li><img src="./assets/icons/twitter.png" alt="Twitter"></li>
+                            <li><img src="./assets/icons/movie.png" alt="YouTube"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_copyright">
+                    <!-- copyright section contans only  one sentence -->
+                    <p>
+                        Copyright 2022 &copy;
+                        <span style=" cursor: pointer;"><a style="color:white;" href="index.html">Bot Biruwa</a></span>
+                        <!-- making it a link to  the same page  -->
+                        . All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./index.js"></script>
+
+</body>
+
+</html>

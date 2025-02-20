@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- defined meta tags  -->
+    <meta name="description" content="The store page of bot biruwa" />
+    <meta name="keywords" content="bot, biruwa,store, price" />
+    <meta name="author" content="Sumit, Rishav" />
+
+    <title>Store | Bot Biruwa</title>
+
+    <!-- link to external css stylesheet -->
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        /* Hiding the horizontal overflow of the body element */
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /*Setting the color and text decoration for all links*/
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /*Setting the height and width of a banner image*/
+
+        .banner img {
+            width: 112%;
+            height: 750px;
+        }
+
+        /*Setting the color and position of heading */
+
+        .heading {
+            color: bisque;
+            position: absolute;
+            top: 330px;
+            left: 90px;
+        }
+
+        /*Setting the color and position of heading 2*/
+
+        .heading2 {
+            color: white;
+            position: absolute;
+            top: 535px;
+            left: 90px;
+        }
+
+        /*Aligning a header and setting its font size and weight*/
+
+        .header2 {
+            text-align: center;
+            font-size: 29px;
+            font-weight: 100;
+            margin: 10px 0 20px 0;
+        }
+
+        /*With the use of flex box creating a separate line*/
+
+        .b {
+            display: flex;
+            margin: 30px 0 30px 0;
+        }
+
+        .b:before,
+        .b:after {
+            flex: 1;
+            content: '';
+            height: 1px;
+            background: black;
+            margin-top: 25px;
+        }
+
+        /*Padding and aligning a header*/
+
+        .header {
+            padding: 40px 0 40px 0;
+            text-align: center;
+            font-weight: 550;
+        }
+
+        /*Setting font weight, size and alignment for a paragraph*/
+
+        .para2 {
+            font-weight: 100;
+            font-size: 29px;
+            text-align: center;
+        }
+
+        /*Setting the height, width, alignment and margin of a container for products cards created with flexbox*/
+
+        .pro-container {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 45px;
+        }
+
+        /*Setting the width, overflow, border, border radius, and box shadow for product cards*/
+
+        .pro-container .card {
+            width: 255px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px rgb(6, 149, 6);
+            border-radius: 15px;
+            box-shadow: 0 0 7px rgba(5, 178, 31, 0.8);
+            justify-content: space-evenly;
+        }
+
+        /*setting the font size and margin for the price of the products*/
+
+        .price {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /*Style for the strike through text*/
+
+        strike {
+            color: red;
+            margin-right: 10px;
+        }
+
+        /*Setting the width and margin for the product image*/
+
+        .pro-container .card .product-image {
+            width: 230px;
+            margin: 20px auto;
+        }
+
+        /*Style for the product image*/
+
+        .pro-container .card .product-image img {
+            width: 100%;
+        }
+
+        /*Setting the font-size, padding, margin and font-weight of h4*/
+
+        .pro-container .card .product-info h4 {
+            font-size: 18px;
+            padding: 0 25px;
+            margin-bottom: 10px;
+            font-weight: 100;
+        }
+
+        /*Setting width and position for the Add to cart button*/
+
+        .pro-container .card .btn {
+            width: 100%;
+            position: relative;
+            bottom: -5px;
+        }
+
+        /*Style for the add to cart button in the product card*/
+
+        .pro-container .card .btn button {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            border: 1px solid grey;
+            outline: none;
+            color: rgb(18, 199, 18);
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*Setting the height, width, alignment and margin of the second container for product cards created with flexbox*/
+
+        .pro-container2 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 45px;
+        }
+
+        /*Setting the width, overflow, border, border radius, and box shadow for second product cards*/
+
+        .pro-container2 .card {
+            width: 250px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px rgb(6, 149, 6);
+            border-radius: 15px;
+            box-shadow: 0 0 7px rgba(5, 178, 31, 0.8);
+            justify-content: space-evenly;
+        }
+
+        /*Style for the product image of second product card*/
+
+        .pro-container2 .card .product-image {
+            width: 230px;
+            margin: 20px auto;
+        }
+
+        /*Setting the Width of the product image*/
+
+        .pro-container2 .card .product-image img {
+            width: 100%;
+        }
+
+        /*Setting the font-size, padding, margin and font-weight of h4*/
+
+        .pro-container2 .card .product-info h4 {
+            font-size: 18px;
+            padding: 0 25px;
+            margin-bottom: 10px;
+            font-weight: 100;
+        }
+
+        /*Style for add to card button in second product card*/
+
+        .pro-container2 .card .btn {
+            width: 100%;
+        }
+
+        /*Setting the width, padding, color and font-size for the Add to card button of the second product container*/
+
+        .pro-container2 .card .btn button {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            border: 1px solid grey;
+            outline: none;
+            color: rgb(18, 199, 18);
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*Setting the height, width, alignment and margin of the third container for product cards created with flexbox*/
+
+        .pro-container3 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* flex-wrap: wrap;s */
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        /*Setting the width, overflow, border, border radius, and box shadow for third product cards*/
+
+        .pro-container3 .card {
+            width: 250px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px rgb(6, 149, 6);
+            border-radius: 15px;
+            box-shadow: 0 0 7px rgba(5, 178, 31, 0.8);
+            justify-content: space-evenly;
+            height: 100%;
+        }
+
+        /*Style for the product image of third product card*/
+
+        .pro-container3 .card .product-image {
+            width: 230px;
+            margin: 20px auto;
+        }
+
+        /*Setting the Width of the product image*/
+
+        .pro-container3 .card .product-image img {
+            width: 100%;
+        }
+
+        /*Setting the font-size, padding, margin and font-weight of h4*/
+
+        .pro-container3 .card .product-info h4 {
+            font-size: 18px;
+            padding: 0 25px;
+            margin-bottom: 10px;
+            font-weight: 100;
+        }
+
+        /*Style for add to card button in the third product card*/
+
+        .pro-container3 .card .btn {
+            width: 100%;
+        }
+
+        /*Setting the width, padding, color and font-size for the Add to card button of the third product container*/
+
+        .pro-container3 .card .btn button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: black;
+            border: 1px solid grey;
+            outline: none;
+            color: rgb(18, 199, 18);
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*Style for the shop now button*/
+
+        #btn2 {
+            width: 145px;
+            height: 45px;
+            font-weight: bolder;
+            font-size: medium;
+            background-color: black;
+            letter-spacing: 2px;
+            margin-left: 50px;
+            color: rgb(18, 199, 18);
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 710px;
+            left: 40px;
+        }
+
+        /*Setting a margin of 30px on the top and bottom*/
+
+        .c {
+            display: flex;
+            margin: 30px 0 30px 0;
+        }
+
+        /*Styling the before and after pseudo-elements as flex items with a height of 1px and black background*/
+
+        .c:before,
+        .c:after {
+            flex: 1;
+            content: '';
+            height: 1px;
+            background: black;
+            margin-top: 25px;
+        }
+
+        /*Style for the image between two lines*/
+
+        .image {
+            position: relative;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        /*Setting the width, position for the image between two lines*/
+
+        .image img {
+            width: 120%;
+            position: relative;
+            top: 255px;
+            right: 433px;
+            height: 690px;
+        }
+
+        /*Style for stock alert*/
+
+        .stock_alert {
+            /* size and visibility */
+            width: 30%;
+            z-index: 2;
+            /* POSITIONING  */
+            position: sticky;
+            top: 40%;
+            left: 35%;
+            display: none;
+            /* colors and font size  */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*Setting the margin for the stock alert*/
+
+        .stock_alert p {
+            margin-bottom: 30px;
+        }
+
+        /*Setting the font size and font weight of the stock alert flag*/
+
+        .flag {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /*Style for the stock alert when the product is available*/
+
+        .greenflag {
+            background-color: #52d017;
+        }
+
+        /*Setting the color of stock alert when the product is out of stock*/
+
+        .redflag {
+            background-color: #dd3b38;
+            color: white;
+        }
+    </style>
+</head>
+
+<body id="store-body">
+    <!-- nav bar -->
+    <header>
+        <nav>
+            <div class="nav_container" id="navbar">
+                <div class="nav_logo">
+                    <!-- this division contains the logo of the website -->
+                    <img src="./assets/img/logo.png"
+                        style="height: auto; width: auto; max-height: 95px; max-width: 300px;" alt="">
+                </div>
+
+                <div class="search_bar">
+                    <!-- division for search bar -->
+                    <form action="">
+                        <input type="text" placeholder="Search bonsai plants ...">
+                    </form>
+                </div>
+                <div class="nav_bar">
+                    <!-- to contain the links to navigate to other pages -->
+                    <ul class="nav_items">
+                        <li><a href="index.html" class="nav_links">Home</a></li>
+                        <li><a href="store.html" class="nav_links selected_nav">Store</a></li>
+                        <li><a href="blogs.html" class="nav_links">Blogs</a></li>
+                        <li><a href="research.html" class="nav_links">Research</a></li>
+                        <li><a href="about.html" class="nav_links">About Us</a></li>
+                        <li>
+                            <!-- icon for login  -->
+                            <button style="margin-left: 20px;" onclick="login()">
+                                <img src="./assets/icons/admin.png" width="24px" height="24px" alt="user"
+                                    onclick="loginMenu()">
+                            </button>
+                        </li>
+                        <li>
+                            <!-- cart icon  -->
+                            <button onclick="cartMessage()" style="margin-left: 30px;">
+                                <img src="./assets/icons/cart.png" width="24px" height="24px" alt="cart">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- alert container  -->
+    <div class="alert" id="alert-container">
+        <div class="alert_container">
+            <div class="alert_cancel" id="alert-cancel">
+                <button onclick="closeAlert()">x</button>
+            </div>
+            <div class="alert_content">
+                <p>You do not have any item in your cart !</p>
+                <span>Add products to see them in your cart.</span><br>
+                <a href="store.html">
+                    <button id="alertBtn">
+                        View products
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- alert container  -->
+    <!-- login and sign up form pop up -->
+
+    <!-- login container holds all elements related to the login form-->
+    <div class="login" id="login-container">
+        <div class="login_container">
+            <!--cancel button closed the login form-->
+            <div class="login_cancel">
+                <button onclick="closeLogin()">
+                    x
+                </button>
+            </div>
+            <!-- The login form-->
+            <form action="">
+                <div class="login_header">
+                    <h1>LOG IN</h1>
+                    <p>Enter your registered email id and password to log in to your account.</p>
+                </div>
+                <!-- input section contains the email and password inputs and a forgot password link-->
+                <div class="login_input">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <p>forgot password? <a href="#">Click here</a>.</p>
+                </div>
+                <!--login button submit the form-->
+                <div class="login_button">
+                    <button>
+                        Log In
+                    </button>
+                </div>
+                <div class="login_option">
+                    or log in with
+                </div>
+                <!-- icons section contains logos of other services that the user can log in with-->
+                <div class="login_icons">
+                    <img src="./assets/icons/google.png" width="20" height="20" alt="google"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/facebook-logo-2019.png" width="20" height="20" alt="facebook"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/instagram.png" width="20" height="20" alt="instagram"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/twitter.png" width="20" height="20" alt="">
+                </div>
+                <!--a horizontal line to separate sections-->
+                <hr>
+                <div class="login_register">
+                    Do not have an account yet? <a href="#">Register</a>.
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!------xxx------ login and sign up form pop up -----xxx------->
+
+    <!-- out of stock alert  -->
+    <div class="stock_alert" id="stock-div">
+        <div class="stock_container">
+            <div class="alert_container">
+                <div class="alert_cancel" id="alert-cancel">
+                    <button onclick="closeAlert()">x</button>
+                </div>
+                <div class="alert_content">
+                    <p>Ooops... Out Of Stock !!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---xxx- out of stock alert ---xxx -->
+
+    <!-- The main section for the store, which contains a banner with an image, heading and a button to shop now.-->
+    <main id="store-section">
+        <div class="container">
+            <div class="row">
+                <div class="banner">
+                    <img src="./assets/product img/1.webp" alt="img" width="300px" height="700px">
+                    <h2 class="heading">
+                        <p style="font-size: 64px; "> Home to the finest </p><br>
+                        <p style="color: #52d017; font-size: 55px;">
+                            Bonsai Plants.</p>
+                    </h2>
+                    <h3 class=" heading2 " style="color: bisque; font-size: 40px;">
+                        <p style="margin-bottom: 15px;">
+                            Starting at only
+                        </p>
+
+                        <p style="color:#52d017; font-size: 48px;"> Rs.1,299/-</p>
+                    </h3>
+                    <nav>
+                        <a href="#prods"><button id="btn2">Shop now!</button></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <section id="prods">
+            <div class="text">
+                <h3 class="header">
+                    <p class="price">
+                    <p style="font-size: 32px;">Our Products</p>
+                    </p>
+                </h3>
+
+                <div class="text2">
+                    <h3 class="header2">
+                        <p style="font-size: 23px; font-weight: bold;">
+                            From Japanese Juniper to Rosemary Bonsai Everthing you need <br>now in one place!
+                        </p>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="b">
+                <!-- top logo  -->
+                <img src="./assets/product img/2.jpg " alt="image " width="75px ">
+            </div>
+
+        </section>
+        <section>
+            <div class="pro-container">
+                <!-- This div contains all the four product cards-->
+                <div class="card">
+                    <!-- product 1-->
+                    <a href="./product.html">
+                        <div class=" flag greenflag">
+                            <p>Available</p>
+                        </div>
+                        <div class="product-image">
+                            <img src="./assets/product img/3.jpg" alt="" width="230px" height="240px">
+                        </div>
+                        <div class=" product-info ">
+                            <h3>
+                                <p style="font-size: 21px;">Ginseng Ficus Bonsai</p>
+                            </h3>
+                            <h4>
+                                <p class="price">
+                                    <strike>Rs. 3,599</strike> Rs. 1,799
+                                </p>
+                            </h4>
+                        </div>
+                        <!--Button to add this product in your cart-->
+                        <div class=" btn ">
+                            <button type="button ">Add To Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <!--xxx-Product 1-xxx-->
+                <!--product 2-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/4.jpg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Flowering Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 2,599</strike> Rs. 1,299
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 2-xxx-->
+                <!-- product 3 -->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/5.jpg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Japanese Juniper Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 2,599</strike> Rs. 2,299
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 3-xxx-->
+                <!-- Product 4 -->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/6.jpg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Ginseng Ficus Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 2,599</strike> Rs. 2,199
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 4-xxx-->
+            </div>
+            <!-- This div contains another four Products cards-->
+            <div class="pro-container2 ">
+                <!--product 1-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/7.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Carsulla Jade Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs. 1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 1-xxx-->
+                <!-- Product 2-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/8.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Cotoneaster Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs. 1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 2-xxx-->
+                <!--Product 3-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/9.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Japanese Maple Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs. 1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 3-xxx-->
+                <!--Product 4-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/10.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Milletia Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs. 1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 4-xxx-->
+            </div>
+            <!--This div contains the another four product cards-->
+            <div class="pro-container3 ">
+                <!--Product 1-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/11.webp" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Pink Azalea Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs. 1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 1-xxx-->
+                <!--Product 2-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/12.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Rosemary Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs.1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 2-xxx-->
+                <!--Product 3-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/13.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Fukien Tea Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs. 1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 3-xxx-->
+                <!--Product 4-->
+                <div class="card" onclick="stock()">
+                    <div class="flag redflag">
+                        <p>Out of stock</p>
+                    </div>
+                    <div class="product-image">
+                        <img src="./assets/product img/14.jpeg" alt="" width="230px" height="240px">
+                    </div>
+                    <div class=" product-info ">
+                        <h3>
+                            <p style="font-size: 21px;">Magnolia Kubus Bonsai</p>
+                        </h3>
+                        <h4>
+                            <p class="price">
+                                <strike>Rs. 3599</strike> Rs.1799
+                            </p>
+                        </h4>
+                    </div>
+                    <div class=" btn ">
+                        <button type="button ">Add To Cart</button>
+                    </div>
+                </div>
+                <!--xxx-Product 4-xxx-->
+            </div>
+        </section>
+
+        <section>
+            <!-- bottom logo -->
+            <div class="c"><img src="./assets/product img/2.jpg " alt="image " width="75px "></div>
+        </section>
+    </main>
+    <!-- footer  -->
+    <footer>
+        <div class="footer_container">
+            <div class="footer_main">
+                <div class="footer_links">
+                    <!-- first left box for the footer section containing the quick links -->
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="./about.html#contactus">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_logo">
+                    <!-- center box for logo  -->
+                    <span style="color:rgb(13, 190, 84)">Bot Biruwa</span> <br>
+                    <span style="font-size: small;"><i>Since 2011, making world green.</i></span>
+                </div>
+                <div class="footer_contact">
+                    <!-- right box to add the contact area -->
+                    <h2>Contact</h2>
+                    <ul>
+                        <li><img src="./assets/icons/location.png" alt="" style="margin-right: 15px;">Durbar Marg,
+                            Kathmandu
+                        </li>
+                        <li style=" cursor: pointer; text-decoration: underline;"><img
+                                src="./assets/icons/telephone.png" alt="Telephone"
+                                style="margin-right: 15px;">01-1010101</li>
+                        <li style=" cursor: pointer; text-decoration: underline;"><img src="./assets/icons/email.png"
+                                alt="Email" style="margin-right: 15px;">support@bonsaistore.com.np</li>
+                    </ul>
+                    <h3>Follow us</h3>
+                    <ul class="footer_icons">
+                        <!-- social media icons for the contact  section -->
+                        <li><img src="./assets/icons/facebook-logo-2019.png" alt="Facebook"></li>
+                        <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                        <li><img src="./assets/icons/twitter.png" alt="Twitter"></li>
+                        <li><img src="./assets/icons/movie.png" alt="YouTube"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <!-- copyright section contans only one sentence -->
+                <p>
+                    Copyright 2022 &copy;
+                    <span style=" cursor: pointer;"><a style="color:white;" href="index.html">Bot Biruwa</a></span>
+                    <!-- making it a link to the same page  -->
+                    . All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- link to external css file  -->
+    <script src="./index.js"></script>
+</body>
+
+</html>

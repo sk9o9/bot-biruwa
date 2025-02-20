@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- defined meta tags  -->
+    <meta name="description" content="The home page of bot biruwa" />
+    <meta name="keywords" content="bot, biruwa,home" />
+    <meta name="author" content="Rishav" />
+
+
+    <title>Home | Bot Biruwa</title>
+    <!-- link to external stylesheet  -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    .hero_text {
+        /* to display it over other divs  */
+        position: absolute;
+        bottom: 150px;
+        left: 20px;
+        background: transparent;
+        color: Black;
+        /* animation  */
+        animation: fadeIn 4s, slideIn 2s;
+    }
+
+    .hero_text h1 {
+        font-size: 50px;
+    }
+
+    .hero_text button {
+        /* button stylings  */
+        padding: 20px;
+        width: 300px;
+        text-transform: uppercase;
+        font-size: 17px;
+        background-color: black;
+        color: white;
+        margin-top: 80px;
+    }
+
+    .hero_text button:hover {
+        /* on hover effects on button  */
+        background-color: #20272e;
+        cursor: pointer;
+    }
+
+    .down_arrow {
+        /* to display it above others  */
+        position: absolute;
+        top: 90%;
+        left: 48%;
+        transition: 0.5s ease;
+    }
+
+    .down_arrow:hover {
+        /* to make it bigger on hover */
+        scale: 1.25;
+        cursor: pointer;
+    }
+
+
+    /*===xxxx==== product overview section on home page ====xxx=== */
+    .hanging {
+        /* to maintain the positioning and display over others  */
+        position: absolute;
+        left: -85%;
+        top: 967px;
+    }
+
+    .sales_text {
+        /* to maintain the positioning and display over others  */
+        position: absolute;
+        top: 1020px;
+        left: 370px;
+    }
+
+    .sales_text button {
+        padding: 15px;
+        width: 300px;
+        text-transform: uppercase;
+        font-size: 17px;
+        background-color: black;
+        color: white;
+        margin-top: 75px;
+    }
+
+    .sales_text button:hover {
+        background-color: #20272e;
+        cursor: pointer;
+    }
+
+    .sales_img {
+        /* to maintain the positioning and display over others  */
+        position: absolute;
+        top: 965px;
+        left: 771px;
+        /* box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5); */
+    }
+
+    .sales_down_arrow {
+        /* to maintain the positioning and display over others  */
+        position: absolute;
+        top: 1560px;
+        left: 48%;
+    }
+
+
+
+    /*========== articles overview section on home page ======= */
+
+
+    .blogs {
+        /* to display horizontally  */
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 100px 0px 100px;
+        padding: 20px 0;
+
+    }
+
+    .blogs_container {
+        width: 60%;
+    }
+
+    .blogs_header {
+        text-align: center;
+    }
+
+    .blog_card {
+        /* styles for the card  */
+        background-color: #ffffff;
+        width: 320px;
+        height: 420px;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .blogs_main {
+        /* to display horizontally  */
+        margin: 70px 0 10px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .blog_content a {
+        text-decoration: none;
+    }
+
+    .blog_content span:hover {
+        cursor: pointer;
+    }
+
+    .blogs_button {
+        text-align: center;
+        margin: 60px 0 40px 0;
+
+    }
+
+    .blogs_button button {
+        /* to style the button of blogs  */
+        padding: 15px;
+        width: 300px;
+        text-transform: uppercase;
+        font-size: 17px;
+        background-color: black;
+        color: white;
+    }
+
+    .blogs_button button:hover {
+        /* on hover effects   */
+        background-color: #20272e;
+        cursor: pointer;
+    }
+
+    .blogs_side {
+        /* to display vertically and justify them  */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .news {
+        margin: 50px 0 0 210px;
+        width: 310px;
+        height: 460px;
+        padding: 20px;
+        background-color: black;
+        text-align: center;
+    }
+
+    .news_form input {
+        /* to style input of form  */
+        padding: 10px;
+        margin-top: 45px;
+        width: 270px;
+    }
+
+    .news_form button {
+        padding: 10px;
+        background: none;
+        color: white;
+        outline: 1px solid white;
+        width: 120px;
+        margin-top: 30px;
+
+
+    }
+
+    .news_form button:hover {
+        background-color: #20272e;
+        cursor: pointer;
+    }
+
+    .right_quiz {
+        /* border will be  dashed  */
+        border: 2px dashed black;
+        height: 120px;
+        background-color: #FFE599;
+        margin-bottom: 25px;
+    }
+
+    .right_quiz button {
+        /* to pllace it on right  */
+        float: right;
+        margin: 10px 50px 0 0;
+        padding: 10px;
+        text-transform: uppercase;
+        background-color: black;
+        color: white;
+        width: 150px;
+    }
+
+    .right_quiz button:hover {
+        background-color: #20272e;
+        /* since we do not have any action for the button on click  */
+        cursor: not-allowed;
+    }
+
+    .whyus_container {
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .why_contact {
+        /* to display horizontally  */
+        display: flex;
+        width: 80%;
+        margin: auto;
+    }
+
+    .why_contact_left {
+        margin: 0 150px 0 200px;
+    }
+
+    .why_contact_left h1 {
+        font-size: 39px;
+    }
+
+    .why_contact_left p {
+        color: grey;
+        margin-top: 20px;
+    }
+
+    .why_contact_left button {
+        padding: 15px;
+        margin-top: 35px;
+        width: 250px;
+        text-transform: uppercase;
+        font-size: 17px;
+        background-color: black;
+        color: white;
+    }
+
+
+    .why_contact_left button:hover {
+        background-color: #20272e;
+        cursor: pointer;
+    }
+
+    .why_cards {
+        padding: 13px;
+        background-color: #e8ecec;
+        margin: 20px 100px 20px 0;
+        width: 20%;
+        /* to display vertically  */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 15px;
+    }
+
+    .why_cards h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .why_card {
+        display: flex;
+    }
+
+    .why_card_text {
+        margin: 13px 0 0 20px;
+    }
+
+    .trust {
+        margin: 0 100px 10px 100px;
+        padding: 10px;
+        background-color: #e8ecec;
+        /* box-shadow:10px 90px 9px burlywood; */
+    }
+
+    .trust_main {
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .trust_header h1 {
+        font-size: 32px;
+        text-align: center;
+        padding: 3px 0 7px 0;
+    }
+
+    .trust_card {
+
+        text-align: center;
+        /* padding: 10px 0 5px 0; */
+    }
+
+    .trust_card_title {
+        font-size: 22px;
+        font-weight: 600;
+        padding: 10px;
+    }
+
+
+
+    /*==xx===== articles overview section on home page ===xx==== */
+</style>
+
+<body>
+    <!-- nav bar -->
+    <header>
+        <nav>
+            <div class="nav_container" id="navbar">
+                <div class="nav_logo">
+                    <!-- this division contains the logo of the website -->
+                    <img src="./assets/img/logo.png" style="max-height: 95px; max-width: 300px;" alt="">
+                </div>
+
+                <div class="search_bar">
+                    <!-- division for search bar -->
+                    <form action="">
+                        <input type="text" placeholder="Search bonsai plants ...">
+                    </form>
+                </div>
+                <div class="nav_bar">
+                    <!-- to contain the links to navigate to other pages -->
+                    <ul class="nav_items">
+                        <li><a href="index.html" class="nav_links selected_nav">Home</a></li>
+                        <li><a href="store.html" class="nav_links">Store</a></li>
+                        <li><a href="blogs.html" class="nav_links">Blogs</a></li>
+                        <li><a href="research.html" class="nav_links">Research</a></li>
+                        <li><a href="about.html" class="nav_links">About Us</a></li>
+                        <li>
+                            <!-- icon for login  -->
+                            <button style="margin-left: 20px;" onclick="login()">
+                                <img src="./assets/icons/admin.png" width="24px" height="24px" alt="user"
+                                    onclick="loginMenu()">
+                            </button>
+                        </li>
+                        <li>
+                            <!-- cart icon  -->
+                            <button onclick="cartMessage()" style="margin-left: 30px;">
+                                <img src="./assets/icons/cart.png" width="24px" height="24px" alt="cart">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- alert container  -->
+    <div class="alert" id="alert-container">
+        <!-- should show up when the cart icon is clicked  -->
+        <div class="alert_container">
+            <div class="alert_cancel" id="alert-cancel">
+                <button onclick="closeAlert()">x</button>
+            </div>
+            <div class="alert_content">
+                <p>You do not have any item in your cart !</p>
+                <span>Add products to see them in your cart.</span><br>
+                <!-- link to store.html file  -->
+                <a href="store.html">
+                    <button id="alertBtn">
+                        Visit Store
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- alert container  -->
+
+
+    <!-- login and sign up form pop up -->
+
+
+    <div class="login" id="login-container">
+        <!-- should show up when admin icon is clicked   -->
+        <div class="login_container">
+            <div class="login_cancel">
+                <button onclick="closeLogin()">
+                    x
+                </button>
+            </div>
+            <form action="">
+                <div class="login_header">
+                    <!-- componenets inside the login modal  -->
+                    <h1>LOG IN</h1>
+                    <p>Enter your registered email id and password to log in to your account.</p>
+                </div>
+                <div class="login_input">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <p>forgot password? <a href="#">Click here</a>.</p>
+                </div>
+                <div class="login_button">
+                    <button>
+                        Log In
+                    </button>
+                </div>
+                <div class="login_option">
+                    or log in with
+                </div>
+                <div class="login_icons">
+                    <!-- icons  -->
+                    <img src="./assets/icons/google.png" width="20" height="20" alt="google"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/facebook-logo-2019.png" width="20" height="20" alt="facebook"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/instagram.png" width="20" height="20" alt="instagram"
+                        style="margin-right: 10px;">
+                    <img src="./assets/icons/twitter.png" width="20" height="20" alt="">
+                </div>
+                <hr>
+                <div class="login_register">
+                    Do not have an account yet? <a href="#">Register</a>.
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!------xxx------ login and sign up form pop up -----xxx------->
+
+    <!---------------------------------- main -------------------------------- -->
+    <main>
+        <section>
+            <div class="hero_section">
+                <!-- this is the first view section  -->
+                <div class="bg_img">
+                    <!-- the background img goes here -->
+                    <img src="./assets/img/main bg.jpg" style="object-fit: cover;" width="100%" height="730"
+                        alt="bg image">
+                </div>
+                <div class="hero_text">
+                    <h1>
+                        <!-- the hero text goes here  -->
+                        Decorate your place <br> with our beautiful <br>
+                        <span style="font-size: 60px; ">Bonsai Plants</span>
+                    </h1>
+
+                    <a href="store.html">
+                        <!-- shop now button goes here  -->
+                        <button>
+                            shop now
+                        </button>
+                    </a>
+                </div>
+                <div class="down_arrow">
+                    <a href="#sales"><img src="./assets/icons/down.png" alt="down arrow"></a>
+                </div>
+            </div>
+        </section>
+        <!-- code for 1 screen down  -->
+        <section id="sales">
+            <div class="hanging">
+                <img src="./assets/img/hanging.png" width="100%" height="400px" alt="hanging">
+            </div>
+            <div class="sales"> <!--id to naviagte while  clicking on main page-->
+                <img src="./assets/img/bg2.jpg" width="100%" height="830px" alt="">
+            </div>
+
+            <div class="sales_text">
+                <p style="font-size: 34px; font-weight: bold;">
+                    We believe that <br>
+                    you won't <br> check out <br>
+                    with an empty cart!
+                </p>
+                <a href="./store.html">
+                    <button>
+                        Visit Shop Now
+                    </button>
+                </a>
+            </div>
+            <div class="sales_img">
+                <img src="./assets/img/home bonsai.png" width="310px" height="397px" alt="sales bonsai">
+            </div>
+        </section>
+
+        <section id="blogs" style="background-color: #FFE599; height: 830px;">
+            <!-- blog section goes here  -->
+            <div class="blogs">
+                <div class="blogs_container">
+                    <div class="blogs_header">
+                        <!-- title goes here  -->
+                        <h1 style="font-size: 44px;">Our Blogs </h1>
+                        <p style="font-size: 18px; margin-top: 10px; color: #20272e;">We use the best technologies to
+                            deliver you the best products.</p>
+                    </div>
+                    <div class="blogs_main">
+                        <div class="blog_card">
+                            <div class="blog_header">
+                                <!-- card  title goes here  -->
+                                <p style="font-size: 19px; font-weight: bold; margin: 0px 0 5px 0;">How technology is
+                                    helping us grow our business?</p>
+                            </div>
+                            <div class="blog_img">
+                                <!-- the image goes here  -->
+                                <img src="./assets/img/blogs1.webp" style="border-radius: 5px;" width="300px"
+                                    height="210px" alt="blog img">
+                            </div>
+                            <div class="blog_content">
+                                <p style="font-size:15px; text-align: justify;">Technology has been developing everyday
+                                    and it has been positively helped flower business to
+                                    become
+                                    more and more easy and effective. As we know that farmers and florists are using a
+                                    advanced
+                                    cultivation technology to increase the harvest and preserve </p>
+                                <a href="blogs.html#blog1">
+                                    <span style="font-size: 13px; color: #20272e;">
+                                        Read more ...
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="blog_card">
+                            <div class="blog_header">
+                                <!-- card  title goes here  -->
+                                <p style="font-size: 19px; font-weight: bold; margin: 0px 0 5px 0;">
+                                    How to choose a a bonsai tree?
+                                </p>
+                            </div>
+                            <!-- the image goes here  -->
+                            <div class="blog_img">
+                                <br>
+                                <img src="./assets/img/blogs2.webp" style="border-radius: 5px;" width="300px"
+                                    height="210px" alt="bog img">
+                            </div>
+                            <div class="blog_content">
+                                <p style="font-size:15px; text-align: justify">
+                                    Bonsai Tree is enjoyed by people all over the world. When its come to choosing a
+                                    perfect bonsai tree, there are a few things to keep in mind <br><br><br><br>
+                                </p>
+                                <a href="blogs.html#blog2"><span style="font-size: 13px; color: #20272e;">Read more ...
+                                    </span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blogs_button">
+                        <a href="./blogs.html">
+                            <!-- blogs button goes here  -->
+                            <button>Read more blogs</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="blogs_side">
+                    <div class="news">
+                        <div class="news_header">
+                            <!-- box header goes here  -->
+                            <p style="color: white; font-size: 34px; margin-top: 20px;">Sign up <br> For <br> Newsletter
+                            </p>
+                        </div>
+                        <div class="news_desc">
+                            <p style="color: white; margin-top: 45px;">
+                                By subscribing to our mailing list you will always be updated with the latest news from
+                                us.
+                            </p>
+                        </div>
+                        <div class="news_form">
+                            <form name="newsForm">
+                                <!-- input fields goes here  -->
+                                <input type="email" name="newsEmail" placeholder="email"> <br>
+                                <button onclick="submitNews()">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="right_quiz">
+                        <!-- quiz section set to float right ---goes here -->
+                        <h4 style="font-size: 19px; margin: 10px 0 0 10px;">Confused! Find out the best suited plant for
+                            your home. <br> Take the quiz right away. </h4>
+                        <button>Take the quiz</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="whyus">
+            <div class="whyus_container">
+                <div class="why_contact">
+                    <!-- left side of this section  -->
+                    <div class="why_contact_left">
+                        <h1>
+                            Get to know
+                            <br>
+                            <span style="color: green;">Bot Biruwa</span>
+                            <br>
+                            better ...
+                        </h1>
+                        <p>
+                            Send us your feedback. <br>
+                            It helps us grow more! <br>
+                            Click the button below
+                        </p>
+                        <a href="./about.html#contactus">
+                            <button>Contact Us</button>
+                        </a>
+                    </div>
+                    <div class="why_contact_right">
+                        <img src="./assets/img/operator.png" height="300" width="300" alt="contact us img">
+                    </div>
+                </div>
+
+                <div class="why_cards">
+                    <h1>Why us ?</h1>
+                    <!-- right side of this section  -->
+                    <div class="why_card">
+                        <div class="why_card_img">
+                            <img src="./assets/icons/plant.png" width="60" height="60" alt="plant">
+                        </div>
+                        <div class="why_card_text">
+                            <p><b>54K+ Plants Shippped</b>
+                                <br> Lots of customer!
+                            </p>
+                        </div>
+                    </div>
+                    <!-- repeating the card with description and img changed  -->
+                    <div class="why_card">
+                        <div class="why_card_img">
+                            <img src="./assets/icons/delivery-truck.png" width="60" height="60" alt="truck">
+                        </div>
+                        <div class="why_card_text">
+                            <p><b>Delivery On Time</b>
+                                <br> We deliver the fastest!
+                            </p>
+                        </div>
+                    </div>
+                    <!-- repeating the card with description and img changed  -->
+                    <div class="why_card">
+                        <div class="why_card_img">
+                            <img src="./assets/icons/payment-method.png" width="60" height="60" alt="cash">
+                        </div>
+                        <div class="why_card_text">
+                            <p><b>Cash on Delivery</b>
+                                <br> All over Nepal.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- repeating the card with description and img changed  -->
+                    <div class="why_card">
+                        <div class="why_card_img">
+                            <img src="./assets/icons/customer-service.png" width="60" height="60" alt="customer">
+                        </div>
+                        <div class="why_card_text">
+                            <p><b>Customer Support</b>
+                                <br> 24/7 support!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="trust">
+                <div class="trust_header" style="margin-left: 60px;">
+                    <h1>Trusted by over<h1>
+                </div>
+                <div class="trust_main">
+                    <div class="trust_card">
+                        <div class="trust_card_logo">
+                            <img src="./assets/icons/002-rating.png" width="70px" height="70px" alt="">
+                        </div>
+                        <div class="trust_card_title">
+                            <span style="font-size: 33px;">
+                                90,000+
+                            </span> Customers
+                        </div>
+                    </div>
+                    <!-- repeating the card with description and img changed  -->
+                    <div class="trust_card">
+                        <div class="trust_card_logo">
+                            <img src="./assets/icons/001-handshake.png" width="70px" height="70px" alt="">
+                        </div>
+                        <div class="trust_card_title">
+                            <span style="font-size: 33px;">
+                                1,100+
+                            </span> Partners
+                        </div>
+                    </div>
+                    <!-- repeating the card with description and img changed  -->
+                    <div class="trust_card">
+                        <div class="trust_card_logo">
+                            <img src="./assets/icons/003-farmer.png" width="70px" height="70px" alt="">
+                        </div>
+                        <div class="trust_card_title">
+                            <span style="font-size: 33px;">
+                                900+
+                            </span> Farmers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-----------x-xx-x---------------- main  --------------------x-xx--xx------>
+
+    <!-- footer  -->
+    <footer>
+        <div class="footer_container">
+            <div class="footer_main">
+                <div class="footer_links">
+                    <!-- first left box for the footer section containing the quick links -->
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <!-- contains all the quick links  -->
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="./about.html#contactus">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_logo">
+                    <!-- center box for logo  -->
+                    <span style="color:rgb(13, 190, 84)">Bot Biruwa</span><br>
+                    <span style="font-size: small;"><i>Since 2011, making world green.</i></span>
+                </div>
+                <div class="footer_contact">
+                    <!-- right box to add the contact area -->
+                    <h2>Contact</h2>
+                    <ul>
+                        <!-- some inline styles has been used here  -->
+                        <li><img src="./assets/icons/location.png" alt="" style="margin-right: 15px;">Durbar Marg,
+                            Kathmandu</li>
+                        <li style=" cursor: pointer; text-decoration: underline;"><img
+                                src="./assets/icons/telephone.png" alt="Telephone"
+                                style="margin-right: 15px;">01-1010101</li>
+                        <li style=" cursor: pointer; text-decoration: underline;"><img src="./assets/icons/email.png"
+                                alt="Email" style="margin-right: 15px;">support@botbiruwa.com.np</li>
+                    </ul>
+                    <h3>Follow us</h3>
+                    <ul class="footer_icons">
+                        <!-- social media icons for the contact  section -->
+                        <li><img src="./assets/icons/facebook-logo-2019.png" alt="Facebook"></li>
+                        <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                        <li><img src="./assets/icons/twitter.png" alt="Twitter"></li>
+                        <li><img src="./assets/icons/movie.png" alt="YouTube"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <!-- copyright section contans only  one sentence -->
+                <p>
+                    Copyright 2022 &copy;
+                    <span style=" cursor: pointer;"><a style="color:white;" href="index.html">Bot Biruwa</a></span>
+                    <!-- making it a link to  the same page  -->
+                    . All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- linking to the external javascript file -->
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

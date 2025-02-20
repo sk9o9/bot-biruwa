@@ -1,0 +1,558 @@
+*{
+    font-family: 'Poppins', sans-serif; /* to change all around the page */
+    margin: 0;
+    padding: 0;
+    /* removes all the pre  allocated margin and padding  */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ---------------------------nav bar styles------------------------ */
+nav{
+    /* allocating margin to nav  */
+    margin: 0 120px 0 120px;
+}
+
+.nav_container{
+    /* to display horizontally  */
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_logo{
+    font-size: 35px;
+}
+
+.nav_items{
+    /* to display horizontally  */
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_items button{
+    background: white; 
+    border: none;
+    cursor: pointer;
+}
+
+.nav_items button:focus{
+    border-bottom: 3px solid #98c9fa;
+    transition: .2s;
+}
+
+.nav_links{
+    margin: 0 10px 0 10px; /* top right down left*/
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.nav_links:hover{
+    /* hover effect on the nav links  */
+    background-color: rgb(13, 190, 84);
+    color: white;
+    transition: 0.2s;
+}
+
+.selected_nav{
+    background-color: rgb(13, 190, 84);
+    border-radius: 20px;
+    color: white;/* top right down left*/
+}
+
+/* allocating margin at the top to the search bar and nav links to align it with the logo  */
+ .nav_bar{
+    margin-top: 32px;
+}
+
+.search_bar{
+    margin-top: 17px;
+}
+
+.nav_items{
+    list-style: none;
+}
+
+.search_bar input{
+    /* styles for search bar input field  */
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid green;
+    margin: 5px 50px 0 0;
+    width: 250px;
+    outline: none;
+}
+
+.search_bar input:hover{
+    /* hover effects on input search bar  */
+    background: rgb(13, 190, 84); 
+    transition: .3s ease-in;
+}
+
+.search_bar input:focus{
+    background-color: white; 
+    color: rgb(13, 190, 84);
+    font-size: 15px;
+    border: 1px solid rgb(13, 190, 84); /*changing ouline of the search area when clicked*/
+}
+
+.search_bar input:hover::placeholder{
+    color: white;
+}
+
+.search_bar ::placeholder, .search_bar input:focus::placeholder{
+    color: rgb(13, 190, 84); /*color of the place holder for the search bar*/
+    text-align: center;
+    font-size: 15px;
+}
+
+/* ---XXX----------------------nav bar styles---------------------XXX------- */
+
+/* ----------------------------alert pop up  style ------------------------  */
+
+.alert{
+    /* to display over other divs  */
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 30%;
+    display: none;
+    z-index: 1;   
+}
+
+.alert_container{
+    /* basic styling for the contianer  */
+    background-color: white;
+    padding: 10px 15px 15px 15px;
+    border-radius: 20px;
+    background: #98c9fa;
+}
+
+.alert_content{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.alert_content p{
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.alert_cancel{
+    text-align: right;
+}
+
+.alert_content button{
+    /* styles for the butoon  */
+    padding: 15px;
+    margin-top: 30px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.alert_content button:hover{
+    background: #20272e;
+    cursor: pointer;
+}
+
+.alert_cancel button{
+    /* styles for the cancel buttons  */
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.alert_cancel button:hover{
+    background-color: black;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+}
+/* --------xxx-----------------alert pop up  style ---------xxx------------  */
+
+/* ----------------------------login pop up ------------------------  */
+
+.login {
+    width: 350px;
+    /* to display over other containers  */
+    position: absolute;
+    top: 11%;
+    right: 11.5%;
+    z-index: 1;
+    display: none;
+}
+
+.login_container{
+    padding: 10px;
+    background-color: #98c9fa;
+    border-radius: 10px;
+}
+
+.login_cancel{
+    text-align: right;
+}
+
+.login_cancel button{
+    /* button styles  */
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.login_cancel button:hover{
+    /* on hover effects  */
+    background-color: black;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.login_header{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login_header p{
+    margin: 20px 0 20px 0;
+}
+
+.login_input{
+    /* to display vertically  */
+    display: flex;
+    flex-direction: column;
+}
+
+.login_input input{
+    margin: 10px 5px;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+.login_input input:focus{
+    /* when input field is in focus   */
+    outline: none;
+}
+
+.login_input p{
+    margin-left: 10px;
+}
+
+.login_button{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login_button button{
+    /* button styles  */
+    padding: 10px;
+    width: 100px;
+    border: none;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+}
+
+.login_button button:hover{
+    background-color: #20272e;
+    cursor: pointer;
+}
+
+.login_option{
+    text-align: center;
+    font-size: 13px;
+}
+
+.login_icons{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login_icons:hover{
+    cursor: pointer;
+}
+
+.login_container hr{
+    /* styles for the horizontal rule  */
+    border: none;
+    border-top: 1px solid #20272e;
+    width: 60%;
+    margin: 20px 20% 20px 20%;
+}
+
+.login_register{
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* --------xxx-----------------login pop up ------------xxx---------  */
+
+/* --------------------------- why us section ------------------------------ */
+.whyus{
+    margin: 0 30px 0 30px;
+}
+
+.whyus_main{
+    /* to display horizontally  */
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+.whyus_card{
+    /* to display horizontally */
+    display: flex;
+    justify-content: space-between;
+}
+.whyus_card_title{
+    margin: 5px 0 0 15px;
+}
+/* ----------xxx----------------- why us section -------------------xxx----------- */
+
+/* =========================== product details page ============================  */
+.detail_container{
+    margin: 0px 190px 10px 190px;
+    padding-top: 40px;
+}
+
+.detail_main{
+    display: flex;
+
+    /* justify-content: space-around; */
+}
+
+.detail_left, .detail_right{
+    min-width: 50%;
+    max-width: 50%;
+}
+.detail_small_img{
+    border: 1px solid #dddddd;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px 15px 0 0;
+}
+.detail_small_img:hover{
+    border: 1px solid #cf173f;
+    cursor: pointer;
+}
+.detail_header{
+    /* to display horizontally  */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.detail_rating{
+    margin-top: 19px;
+    display: flex;
+}
+
+.rating_text{
+    margin-left: 54px;
+}
+
+.detail_share{
+    margin-top: 10px;
+}
+
+.detail_share_icons img{
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.detail_price{
+    margin-top: 20px;
+}
+
+.detail_delivery{
+    /* to display horizontally  */
+    display: flex; 
+    margin-top: 20px; 
+    border: 3px dotted #cf173f; 
+    width: fit-content; 
+    padding: 0 20px 0 20px;
+}
+
+.detail_button{
+    margin-top: 20px;
+}
+
+.detail_button label{
+    font-size: 20px;
+}
+
+.detail_button select{
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 18px;
+    border: none;
+    outline: 2px solid #cf173f;
+    color: #cf173f;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.detail_button select:focus{
+    outline: 2px solid #cf173f;
+}
+
+.detail_cart,.detail_buy{
+    padding: 10px;
+    width: 170px;
+    font-size: 21px;
+    border-radius: 200px;
+    cursor: pointer;
+    border: none;
+}
+
+.detail_buy{
+    margin: 0 15px 0 15px;
+    background-color: #cf173f;
+    color: white;
+    border: none;
+}
+
+.detail_cart{
+    background-color: white;
+    color: #cf173f;
+    outline: 2px solid #cf173f;
+}
+
+.detail_buy:hover{
+    color: #cf173f;
+    background-color: white;
+    outline: 2px solid #cf173f;
+}
+
+.detail_cart:hover{
+    background-color: #cf173f;
+    color: white;
+}
+.desc{
+    color: #2d2e2e;
+    width: 70%;
+    margin-left: 50px;
+}
+
+.desc_container{
+    padding: 10px 20px;
+}
+
+.desc ul{
+    margin-left: 40px;
+    width: 65%;
+    text-align: justify;
+}
+
+.desc table{
+    width: 60%;
+    text-align: left;
+    border-collapse: collapse;
+}
+.desc th{
+    width: 40%;
+    padding-left: 10px;
+}
+.desc td,tr{
+    border: 1.5px solid #dddddd;
+    padding: 10px;
+}
+.desc_text li{
+    margin: 13px ;
+}
+/* ============xx============= product details page ===============xx===========  */
+
+/*-------------------------footer styles----------------------------------*/
+.footer_container{
+    background-color: black;
+    color: white;
+    padding: 50px 190px 50px 190px;
+}
+
+.footer_main{
+    display: flex; /* display division into one row */
+    justify-content: space-between;
+}
+
+.footer_links, .footer_logo, .footer_contact{
+    width: 25%;
+}
+
+.footer_links li{
+    margin: 20px 0 20px 20px;
+    list-style: none;
+}
+
+.footer_logo{
+    align-self: center; /* places logo at the center */
+    font-size: 35px;
+    text-align: center;
+}
+
+.footer_contact h3, h2{
+    margin: 20px 0 20px 0;
+}
+
+.footer_contact li{
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+.footer_icons{
+    /* to  display horizontally  */
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.footer_copyright{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer_main a{
+    color: white;
+    text-decoration: underline;
+}
+
+/*-----------xxx--------------footer styles ends here----------xxx------------------------*/
+
+/* animations */
+
+@keyframes fadeIn {
+
+    0% {
+        /* starting from opacity 1  */
+        opacity: 0;
+    }
+
+    100% {
+        /* changing the opcaity when 100% loaded to 1 */
+        opacity: 1; 
+    }
+}
+
+@keyframes slideIn{
+    /* forming a right to left slide animation  */
+    from {
+        /* starting from margin left  */
+        margin-left: 30%;
+
+    }
+    to {
+        /* ending to no margin  */
+
+        margin-left: 0%;
+
+    }
+}
+/*---x-- animations end here---xx-- */
